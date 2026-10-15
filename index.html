@@ -1,19 +1,243 @@
+
 <!DOCTYPE html>
-<html><head><title>College Event Portal</title>
-<style>
-body{font-family:Arial;margin:0;background:#eef2f7}
-header{background:#0b5345;color:#fff;padding:20px;text-align:center}
-section{background:#fff;margin:15px;padding:18px;border-radius:8px}
-table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:8px;text-align:left}
-</style></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect - College Events</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f6fb;
+            color: #1e293b;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 28px 16px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        nav {
+            background: #1d4ed8;
+            padding: 14px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1050px;
+            margin: 24px auto;
+            padding: 0 16px;
+        }
+
+        .intro, .event, .registration {
+            background: white;
+            padding: 22px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #0000000d;
+        }
+
+        .events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+
+        .event h3 {
+            color: #1d4ed8;
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 5px 9px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 11px;
+            margin-top: 6px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+
+        button {
+            margin-top: 16px;
+            background: #1d4ed8;
+            color: white;
+            border: 0;
+            border-radius: 6px;
+            padding: 12px 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        #message {
+            font-weight: bold;
+            color: #166534;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+    </style>
+</head>
 <body>
-<header><h1>College Event Management Portal</h1><p>Version 1</p></header>
-<section><h2>Upcoming Events</h2>
-<table><tr><th>Event</th><th>Date</th><th>Time</th><th>Venue</th></tr>
-<tr><td>Tech Symposium</td><td>12 Nov 2026</td><td>9:00 AM</td><td>Main Auditorium</td></tr>
-<tr><td>24-Hour Hackathon</td><td>20 Nov 2026</td><td>10:00 AM</td><td>CS Block Lab 3</td></tr>
-<tr><td>Cultural Fest</td><td>5 Dec 2026</td><td>5:00 PM</td><td>Open Air Theatre</td></tr></table></section>
-<section><h2>Registration Instructions</h2>
-<ol><li>Login with your college ID</li><li>Choose your event</li><li>Submit the form before the deadline</li><li>Check your status under My Registrations</li></ol></section>
-<section><h2>Faculty Coordinators</h2><p>Create events, set participant limits and monitor registrations from the coordinator desk.</p></section>
-</body></html>
+    <header>
+        <h1>CampusConnect</h1>
+        <p>College Event Management Portal</p>
+        <p>Discover. Participate. Celebrate.</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#register">Register</a>
+    </nav>
+
+    <main>
+        <section class="intro" id="home">
+            <h2>Welcome to CampusConnect</h2>
+            <p>
+                Explore technical symposiums, hackathons, workshops,
+                cultural festivals and inter-college competitions.
+            </p>
+            <p>
+                Check event dates, venues and registration instructions
+                before registering.
+            </p>
+        </section>
+
+        <section id="events">
+            <h2>Upcoming College Events</h2>
+
+            <div class="events">
+                <article class="event">
+                    <span class="tag">Technical</span>
+                    <h3>TechNova Symposium</h3>
+                    <p><strong>Date:</strong> November 10, 2026</p>
+                    <p><strong>Time:</strong> 9:00 AM - 4:00 PM</p>
+                    <p><strong>Venue:</strong> Main Auditorium</p>
+                    <p>Technical talks, coding contests and project demos.</p>
+                    <p><strong>Registration:</strong> Submit the form below.</p>
+                </article>
+
+                <article class="event">
+                    <span class="tag">Innovation</span>
+                    <h3>Campus Hackathon</h3>
+                    <p><strong>Date:</strong> November 18, 2026</p>
+                    <p><strong>Time:</strong> 10:00 AM - 6:00 PM</p>
+                    <p><strong>Venue:</strong> Innovation Lab</p>
+                    <p>Build creative solutions with a student team.</p>
+                    <p><strong>Registration:</strong> Team details are required.</p>
+                </article>
+
+                <article class="event">
+                    <span class="tag">Workshop</span>
+                    <h3>Cloud Skills Workshop</h3>
+                    <p><strong>Date:</strong> November 24, 2026</p>
+                    <p><strong>Time:</strong> 2:00 PM - 5:00 PM</p>
+                    <p><strong>Venue:</strong> Computer Lab 2</p>
+                    <p>Learn cloud deployment and DevOps fundamentals.</p>
+                    <p><strong>Registration:</strong> Register below.</p>
+                </article>
+
+                <article class="event">
+                    <span class="tag">Cultural</span>
+                    <h3>Harmony Cultural Fest</h3>
+                    <p><strong>Date:</strong> December 2, 2026</p>
+                    <p><strong>Time:</strong> 10:00 AM - 7:00 PM</p>
+                    <p><strong>Venue:</strong> Open Air Stage</p>
+                    <p>Music, dance, art and inter-college performances.</p>
+                    <p><strong>Registration:</strong> Select the event below.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="registration" id="register">
+            <h2>Student Event Registration</h2>
+            <p>Complete the form to demonstrate the registration workflow.</p>
+
+            <form id="registrationForm">
+                <label for="studentName">Student Name</label>
+                <input id="studentName" required>
+
+                <label for="registerNumber">Register Number</label>
+                <input id="registerNumber" required>
+
+                <label for="email">Email Address</label>
+                <input id="email" type="email" required>
+
+                <label for="eventName">Select Event</label>
+                <select id="eventName" required>
+                    <option value="">Choose an event</option>
+                    <option>TechNova Symposium</option>
+                    <option>Campus Hackathon</option>
+                    <option>Cloud Skills Workshop</option>
+                    <option>Harmony Cultural Fest</option>
+                </select>
+
+                <button type="submit">Register for Event</button>
+            </form>
+
+            <p id="message" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>CampusConnect | College Event Management Portal</p>
+        <p>For event updates, contact your faculty coordinator.</p>
+    </footer>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener(
+            "submit",
+            function (event) {
+                event.preventDefault();
+
+                const name = document.getElementById("studentName").value;
+                const selectedEvent = document.getElementById("eventName").value;
+
+                document.getElementById("message").textContent =
+                    "Thank you, " + name +
+                    "! Your demo registration for " + selectedEvent +
+                    " has been received on this page.";
+            }
+        );
+    </script>
+</body>
+</html>
